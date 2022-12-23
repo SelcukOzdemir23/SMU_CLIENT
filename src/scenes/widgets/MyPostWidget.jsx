@@ -46,7 +46,7 @@ const MyPostWidget = ({ picturePath }) => {
       formData.append("picturePath", image.name);
     }
 
-    const response = await fetch(`https://my-smu-apim.onrender.com/posts`, {
+    const response = await fetch(`http://localhost:3001/posts`, {
       method: "POST",
       headers: { Authorization: `Bearer ${token}` },
       body: formData,
@@ -62,7 +62,7 @@ const MyPostWidget = ({ picturePath }) => {
       <FlexBetween gap="1.5rem">
         <UserImage image={picturePath} />
         <InputBase
-          placeholder="What's on your mind..."
+          placeholder="Aklınızdan ne geçiyor..."
           onChange={(e) => setPost(e.target.value)}
           value={post}
           sx={{
@@ -96,7 +96,7 @@ const MyPostWidget = ({ picturePath }) => {
                 >
                   <input {...getInputProps()} />
                   {!image ? (
-                    <p>Add Image Here</p>
+                    <p>Buraya Resim Ekleyin</p>
                   ) : (
                     <FlexBetween>
                       <Typography>{image.name}</Typography>
@@ -127,7 +127,7 @@ const MyPostWidget = ({ picturePath }) => {
             color={mediumMain}
             sx={{ "&:hover": { cursor: "pointer", color: medium } }}
           >
-            Image
+            Resim
           </Typography>
         </FlexBetween>
 
@@ -135,17 +135,17 @@ const MyPostWidget = ({ picturePath }) => {
           <>
             <FlexBetween gap="0.25rem">
               <GifBoxOutlined sx={{ color: mediumMain }} />
-              <Typography color={mediumMain}>Clip</Typography>
+              <Typography color={mediumMain}>Gif</Typography>
             </FlexBetween>
 
             <FlexBetween gap="0.25rem">
               <AttachFileOutlined sx={{ color: mediumMain }} />
-              <Typography color={mediumMain}>Attachment</Typography>
+              <Typography color={mediumMain}>Ek</Typography>
             </FlexBetween>
 
             <FlexBetween gap="0.25rem">
               <MicOutlined sx={{ color: mediumMain }} />
-              <Typography color={mediumMain}>Audio</Typography>
+              <Typography color={mediumMain}>Ses</Typography>
             </FlexBetween>
           </>
         ) : (

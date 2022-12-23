@@ -6,6 +6,7 @@ import {
   useMediaQuery,
   Typography,
   useTheme,
+  
 } from "@mui/material";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import { Formik } from "formik";
@@ -17,18 +18,18 @@ import Dropzone from "react-dropzone";
 import FlexBetween from "components/FlexBetween";
 
 const registerSchema = yup.object().shape({
-  firstName: yup.string().required("required"),
-  lastName: yup.string().required("required"),
-  email: yup.string().email("invalid email").required("required"),
-  password: yup.string().required("required"),
-  location: yup.string().required("required"),
-  occupation: yup.string().required("required"),
-  picture: yup.string().required("required"),
+  firstName: yup.string().required("Boş bırakılamaz"),
+  lastName: yup.string().required("Boş bırakılamaz"),
+  email: yup.string().email("Geçersiz e-posta").required("Boş bırakılamaz"),
+  password: yup.string().required("Boş bırakılamaz"),
+  location: yup.string().required("Boş bırakılamaz"),
+  occupation: yup.string().required("Boş bırakılamaz"),
+  picture: yup.string().required("Boş bırakılamaz"),
 });
 
 const loginSchema = yup.object().shape({
-  email: yup.string().email("invalid email").required("required"),
-  password: yup.string().required("required"),
+  email: yup.string().email("Geçersiz e-posta").required("Boş bırakılamaz"),
+  password: yup.string().required("Boş bırakılamaz"),
 });
 
 const initialValuesRegister = {
@@ -56,7 +57,7 @@ const Form = () => {
   const isRegister = pageType === "register";
 
   const register = async (values, onSubmitProps) => {
-    // this allows us to send form info with image
+    // burası resim göndermemizi sağlar
     const formData = new FormData();
     for (let value in values) {
       formData.append(value, values[value]);
@@ -64,7 +65,7 @@ const Form = () => {
     formData.append("picturePath", values.picture.name);
 
     const savedUserResponse = await fetch(
-      "https://my-smu-apim.onrender.com/auth/register",
+      "http://localhost:3001/auth/register",
       {
         method: "POST",
         body: formData,
@@ -79,7 +80,7 @@ const Form = () => {
   };
 
   const login = async (values, onSubmitProps) => {
-    const loggedInResponse = await fetch("https://my-smu-apim.onrender.com/auth/login", {
+    const loggedInResponse = await fetch("http://localhost:3001/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(values),
@@ -130,7 +131,7 @@ const Form = () => {
             {isRegister && (
               <>
                 <TextField
-                  label="First Name"
+                  label="Adın"
                   onBlur={handleBlur}
                   onChange={handleChange}
                   value={values.firstName}
@@ -142,7 +143,7 @@ const Form = () => {
                   sx={{ gridColumn: "span 2" }}
                 />
                 <TextField
-                  label="Last Name"
+                  label="Soyadın"
                   onBlur={handleBlur}
                   onChange={handleChange}
                   value={values.lastName}
@@ -152,7 +153,7 @@ const Form = () => {
                   sx={{ gridColumn: "span 2" }}
                 />
                 <TextField
-                  label="Location"
+                  label="Konum"
                   onBlur={handleBlur}
                   onChange={handleChange}
                   value={values.location}
@@ -162,7 +163,7 @@ const Form = () => {
                   sx={{ gridColumn: "span 4" }}
                 />
                 <TextField
-                  label="Occupation"
+                  label="Meslek"
                   onBlur={handleBlur}
                   onChange={handleChange}
                   value={values.occupation}
@@ -195,7 +196,7 @@ const Form = () => {
                       >
                         <input {...getInputProps()} />
                         {!values.picture ? (
-                          <p>Add Picture Here</p>
+                          <p>Buraya Resim Ekleyin</p>
                         ) : (
                           <FlexBetween>
                             <Typography>{values.picture.name}</Typography>
@@ -220,7 +221,7 @@ const Form = () => {
               sx={{ gridColumn: "span 4" }}
             />
             <TextField
-              label="Password"
+              label="Şifre"
               type="password"
               onBlur={handleBlur}
               onChange={handleChange}
@@ -245,7 +246,7 @@ const Form = () => {
                 "&:hover": { color: palette.primary.main },
               }}
             >
-              {isLogin ? "LOGIN" : "REGISTER"}
+              {isLogin ? "GİRİŞ YAP" : "KAYIT OL"}
             </Button>
             <Typography
               onClick={() => {
@@ -262,8 +263,8 @@ const Form = () => {
               }}
             >
               {isLogin
-                ? "Don't have an account? Sign Up here."
-                : "Already have an account? Login here."}
+                ? "Hesabınız yok mu? Buradan kaydolun."
+                : "Zaten hesabınız var mı? Giriş yapın."}
             </Typography>
           </Box>
         </form>

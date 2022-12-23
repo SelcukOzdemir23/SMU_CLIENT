@@ -22,7 +22,7 @@ const UserWidget = ({ userId, picturePath }) => {
   const main = palette.neutral.main;
 
   const getUser = async () => {
-    const response = await fetch(`https://my-smu-apim.onrender.com/users/${userId}`, {
+    const response = await fetch(`http://localhost:3001/users/${userId}`, {
       method: "GET",
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -72,7 +72,7 @@ const UserWidget = ({ userId, picturePath }) => {
             >
               {firstName} {lastName}
             </Typography>
-            <Typography color={medium}>{friends.length} friends</Typography>
+            <Typography color={medium}>{friends.length} Arkadaşlar</Typography>
           </Box>
         </FlexBetween>
         <ManageAccountsOutlined />
@@ -97,13 +97,13 @@ const UserWidget = ({ userId, picturePath }) => {
       {/* THIRD ROW */}
       <Box p="1rem 0">
         <FlexBetween mb="0.5rem">
-          <Typography color={medium}>Who's viewed your profile</Typography>
+          <Typography color={medium}>Profiline Kim Baktı</Typography>
           <Typography color={main} fontWeight="500">
             {viewedProfile}
           </Typography>
         </FlexBetween>
         <FlexBetween>
-          <Typography color={medium}>Impressions of your post</Typography>
+          <Typography color={medium}>Gönderinizin İzlenimleri</Typography>
           <Typography color={main} fontWeight="500">
             {impressions}
           </Typography>
@@ -115,7 +115,7 @@ const UserWidget = ({ userId, picturePath }) => {
       {/* FOURTH ROW */}
       <Box p="1rem 0">
         <Typography fontSize="1rem" color={main} fontWeight="500" mb="1rem">
-          Social Profiles
+        Sosyal Profiller
         </Typography>
 
         <FlexBetween gap="1rem" mb="0.5rem">
@@ -125,7 +125,7 @@ const UserWidget = ({ userId, picturePath }) => {
               <Typography color={main} fontWeight="500">
                 Twitter
               </Typography>
-              <Typography color={medium}>Social Network</Typography>
+              <Typography color={medium}>sosyal ağ</Typography>
             </Box>
           </FlexBetween>
           <EditOutlined sx={{ color: main }} />
@@ -138,7 +138,7 @@ const UserWidget = ({ userId, picturePath }) => {
               <Typography color={main} fontWeight="500">
                 Linkedin
               </Typography>
-              <Typography color={medium}>Network Platform</Typography>
+              <Typography color={medium}>Ağ Platformu</Typography>
             </Box>
           </FlexBetween>
           <EditOutlined sx={{ color: main }} />
