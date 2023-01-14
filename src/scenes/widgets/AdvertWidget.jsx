@@ -20,7 +20,7 @@ const AdvertWidget = () => {
         width="100%"
         height="auto"
         alt="advert"
-        src="https://s.yimg.com/ny/api/res/1.2/7r.iwoSrHUtGjjlPwdJRmg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTM2MA--/https://media.zenfs.com/en/e__181/0c975b30afc8143ac35c715390e9090e"
+        src="https://64.media.tumblr.com/68bd674e9f4a2cd0f24f85540fd729f3/29f008c37e133aa5-50/s540x810/9faa37f56662fc6a40fd4ace300e005c32930fd3.gif"
         style={{ borderRadius: "0.75rem", margin: "0.75rem 0" }}
       />
       <FlexBetween>
