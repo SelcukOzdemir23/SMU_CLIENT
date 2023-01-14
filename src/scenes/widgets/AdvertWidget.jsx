@@ -7,7 +7,7 @@ const AdvertWidget = () => {
   const dark = palette.neutral.dark;
   const main = palette.neutral.main;
   const medium = palette.neutral.medium;
-
+  const gifs = ["https://64.media.tumblr.com/68bd674e9f4a2cd0f24f85540fd729f3/29f008c37e133aa5-50/s540x810/9faa37f56662fc6a40fd4ace300e005c32930fd3.gif", "Volvo", "BMW"];
   return (
     <WidgetWrapper>
       <FlexBetween>
@@ -20,7 +20,8 @@ const AdvertWidget = () => {
         width="100%"
         height="auto"
         alt="advert"
-        src="https://64.media.tumblr.com/68bd674e9f4a2cd0f24f85540fd729f3/29f008c37e133aa5-50/s540x810/9faa37f56662fc6a40fd4ace300e005c32930fd3.gif"
+        
+        src={gifs[0]}
         style={{ borderRadius: "0.75rem", margin: "0.75rem 0" }}
       />
       <FlexBetween>
