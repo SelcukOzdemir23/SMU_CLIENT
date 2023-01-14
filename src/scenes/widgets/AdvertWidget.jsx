@@ -12,7 +12,7 @@ const AdvertWidget = () => {
     <WidgetWrapper>
       <FlexBetween>
         <Typography color={dark} variant="h5" fontWeight="500">
-          Sponsorluk
+          WEDNESDAY
         </Typography>
         <Typography color={medium}>Reklam oluştur</Typography>
       </FlexBetween>
