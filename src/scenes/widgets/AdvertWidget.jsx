@@ -20,7 +20,7 @@ const AdvertWidget = () => {
         width="100%"
         height="auto"
         alt="advert"
-        src="https://akns-images.eonline.com/eol_images/Entire_Site/20221117/rs_500x281-221217100541-500-wednesday-jenna-ortega-dance-cjh-121722.gif"
+        src="https://s.yimg.com/ny/api/res/1.2/7r.iwoSrHUtGjjlPwdJRmg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTM2MA--/https://media.zenfs.com/en/e__181/0c975b30afc8143ac35c715390e9090e"
         style={{ borderRadius: "0.75rem", margin: "0.75rem 0" }}
       />
       <FlexBetween>
