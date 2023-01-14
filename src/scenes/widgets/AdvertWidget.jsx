@@ -20,7 +20,7 @@ const AdvertWidget = () => {
         width="100%"
         height="auto"
         alt="advert"
-        src="https://media.tenor.com/QJNoPeq9WmUAAAAC/netflix-intro-netflix.gif"
+        src="https://akns-images.eonline.com/eol_images/Entire_Site/20221117/rs_500x281-221217100541-500-wednesday-jenna-ortega-dance-cjh-121722.gif?fit=around%7C500:281&output-quality=90&crop=500:281;center,top"
         style={{ borderRadius: "0.75rem", margin: "0.75rem 0" }}
       />
       <FlexBetween>
