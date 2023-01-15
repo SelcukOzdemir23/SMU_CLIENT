@@ -27,7 +27,6 @@ import FlexBetween from "components/FlexBetween";
 
 
 
-
 const Navbar = () => {
   const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
   const dispatch = useDispatch();
@@ -125,14 +124,14 @@ const Navbar = () => {
 
         )}
 
-  <style>
-  @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500&display=swap');
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500&display=swap');
     </style>
-      
+      <Box style={{"padding":"0px 15px 0px 15px", "display":"flex"}}>
       <Typography color={dark} m="0.5rem 0" variant="h5" fontWeight="500" fontFamily={"'Roboto Slab', serif"} gap="15px">
       "{quotes[Math.round(Math.random()*quotes.length)]}"
       </Typography>
-      
+      </Box>
       </FlexBetween>
       
       {/* DESKTOP NAV */}
