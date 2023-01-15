@@ -25,7 +25,6 @@ import { setMode, setLogout } from "state";
 import { useNavigate } from "react-router-dom";
 import FlexBetween from "components/FlexBetween";
 
-import "@fontsource/roboto-slab";
 
 
 
