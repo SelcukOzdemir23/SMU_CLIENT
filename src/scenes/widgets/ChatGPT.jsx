@@ -89,7 +89,7 @@ const handleSubmit = async (e) => {
     // messageDiv.innerHTML = "..."
     loader(messageDiv)
 
-    const response = await fetch('https://my-smu-apim.onrender.com', {
+    const response = await fetch('http://localhost:3001', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
