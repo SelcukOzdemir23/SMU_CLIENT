@@ -56,7 +56,7 @@ const PostWidget = ({
         subtitle={location}
         userPicturePath={userPicturePath}
       />
-      <Typography color={main} sx={{ mt: "1rem" }}>
+      <Typography color={main} sx={{ mt: "1rem"}} style={{backgroundColor:"black",color:"white"}}>
         {tag}
       </Typography>
       <Typography color={main} sx={{ mt: "1rem" }}>
